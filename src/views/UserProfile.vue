@@ -53,7 +53,7 @@ export default {
     justify-content: flex-start;
     width: 600px;
     height: 500px;
-    box-shadow: 0px 6px 15px 0px rgb(132 130 130 / 64%);
+    box-shadow: $cardShadow;
     .greeting {
       color: $base-font;
       font-size: 45px;
