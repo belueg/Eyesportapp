@@ -5,6 +5,7 @@
     </div>
     <div class="Home-Login-Container">
       <LoginForm class="LoginForm" />
+      <div class="Home-triangle" />
     </div>
   </div>
 </template>
@@ -25,6 +26,7 @@ export default {
 .Home {
   height: 100vh;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -37,6 +39,28 @@ export default {
   &-Hero-Container {
     background-color: $primary;
     position: relative;
+  }
+}
+
+@media screen and(max-width:699px) {
+  .Home {
+    &-Hero-Container {
+      display: none;
+    }
+    &-Login-Container {
+      width: 100%;
+    }
+    &-triangle {
+      width: 500px;
+      height: 0;
+      border-bottom: 800px solid $primary;
+      border-left: 800px solid transparent;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: -1;
+    }
   }
 }
 </style>

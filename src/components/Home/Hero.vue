@@ -55,9 +55,14 @@ export default {
     }
   }
   &-promotion {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
     .social-media {
       height: 70px;
-      @include flex();
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       &-url {
         font-size: 20px;
         margin-left: 20px;
@@ -74,8 +79,25 @@ export default {
     width: 291px;
     height: 354px;
     position: absolute;
-    bottom: 0px;
-    right: 20px;
+    top: 200px;
+    left: 200px;
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .Hero {
+    .img-robot {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .Hero {
+    &-title {
+      font-size: 60px;
+    }
   }
 }
 </style>
