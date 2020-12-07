@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <img src="@/assets/transparent-logo.png" class="logo" alt="logo" />
-    <form action="#" class="LoginModal">
+    <div class="LoginModal">
       <div class="modal-card">
         <header class="modal-card-head LoginModal-header">
           <p class="modal-card-title ">Login</p>
@@ -9,7 +9,7 @@
         <section class="modal-card-body">
           <BField label="Email">
             <BInput
-              style="width: 300px;"
+              class="form-inputs"
               type="email"
               :value="email"
               placeholder="Your email"
@@ -19,7 +19,7 @@
 
           <BField label="Password">
             <BInput
-              style="width: 300px;"
+              class="form-inputs"
               type="password"
               :value="password"
               password-reveal
@@ -31,10 +31,10 @@
           <BCheckbox>Remember me</BCheckbox>
         </section>
         <footer class="modal-card-foot">
-          <BButton class="button is-primary">Login</BButton>
+          <BButton class="button is-primary" @click="login">Login</BButton>
         </footer>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -49,8 +49,8 @@ export default {
     }
   },
   methods: {
-    log() {
-      console.log('asdsadsda')
+    login() {
+      this.$router.push('/profile')
     }
   }
 }
@@ -68,6 +68,64 @@ export default {
     border-radius: 8px;
     overflow: hidden;
     width: 350px;
+    .modal-card {
+      .modal-card-body {
+        .field {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .login-container {
+    justify-content: center;
+    .logo {
+      margin-bottom: 30px;
+      width: 156px;
+      height: 41px;
+    }
+  }
+
+  @media screen and (max-width: 825px) {
+    .login-container {
+      .LoginModal {
+        width: 300px;
+        .modal-card {
+          .modal-card-body {
+            .field {
+              width: 260px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 775px) {
+    .login-container {
+      .LoginModal {
+        .modal-card {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .login-container {
+    .LoginModal {
+      width: 280px;
+      .modal-card {
+        .modal-card-body {
+          .field {
+            width: 250px;
+          }
+        }
+      }
+    }
   }
 }
 </style>
