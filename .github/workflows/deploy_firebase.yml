@@ -1,0 +1,24 @@
+name: '[PRODUCTION] Deploy App'
+
+on:
+  push:
+    branches: [master]
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install -g firebase-tools
+        name: Install Firebase CLI
+      - run: npm install
+        name: Install dependencies
+      - run: npm run build --if-present
+        name: Build Vue App
+      - run: firebase use default --token ${{ secrets.FIREBASE_TOKEN}}
+        name: Set firebase project to BETA
+      - run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN}}
+        name: Deploy firebase
