@@ -22,6 +22,7 @@
             mrrobot@email.com
           </span>
         </div>
+        <div class="triangle-shape" />
       </div>
     </div>
   </div>
@@ -41,8 +42,6 @@ export default {
 <style lang="scss" scoped>
 .UserProfile {
   height: calc(100vh - 92px);
-  background: url('../assets/sports_bg.png');
-  //   box-shadow: -5px -2px 15px 0px rgb(132 130 130 / 70%);
 
   @include flex();
   &-box {
@@ -73,6 +72,17 @@ export default {
       span {
         margin: 5px;
       }
+    }
+
+    .triangle-shape {
+      width: 500px;
+      height: 0;
+      border-bottom: 700px solid $primary;
+      border-left: 1400px solid transparent;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      z-index: -1;
     }
   }
 }
