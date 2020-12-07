@@ -42,16 +42,11 @@ export default {
 
 @media screen and (max-width: 690px) {
   .NavBar {
+    height: 80px;
     .logo {
       width: 156px;
       height: 41px;
     }
-  }
-}
-
-@media screen and (max-width: 415px) {
-  .NavBar {
-    height: 80px;
   }
 }
 
