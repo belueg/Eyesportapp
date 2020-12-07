@@ -23,7 +23,8 @@ export default {
 
 <style lang="scss" scoped>
 .NavBar {
-  outline: #bdb8b847 solid 5px;
+  background: white;
+  box-shadow: -5px -2px 15px 0px rgb(132 130 130 / 37%);
   padding: 5px 20px;
   width: 100%;
   @include flex();
