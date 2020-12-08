@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <RouterView />
+    <Transition name="fade" mode="out-in">
+      <RouterView />
+    </Transition>
   </div>
 </template>
 
@@ -8,6 +10,14 @@
 * {
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 @import '~bulma/sass/utilities/_all';
